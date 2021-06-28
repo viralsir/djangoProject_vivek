@@ -10,4 +10,6 @@ def about(request):
     return render(request,"hello/about.html")
 
 def greetings(request,name):
-    return HttpResponse("<h1> Hello "+name+"</h1>")
+   return render(request,"hello/greetings.html",{
+       'username':name
+   })
