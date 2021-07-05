@@ -1,8 +1,10 @@
 {% extends "taskdemo/layout.html" %}
 
 {% block body %}
-    <form >
-        Enter Task : <input type="text" size="20">
+    <form  method="post">
+    {% csrf_token %}
+       {{ form }}
         <input type="submit" value="save">
     </form>
+    <a href="{% url 'task-list' %}"> list task</a>
 {% endblock %}
