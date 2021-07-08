@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'hello.apps.HelloConfig',
     'newyear',
     'taskdemo',
+    'employee',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
