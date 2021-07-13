@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'newyear',
     'taskdemo',
     'employee',
+    'flights',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
