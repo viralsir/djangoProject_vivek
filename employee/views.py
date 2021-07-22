@@ -19,6 +19,8 @@ def home(request):
 class Taskform(forms.Form):
     task=forms.CharField(max_length=20)
 
+
+
 def addtask(request):
     if request.method == 'POST':
         form=Taskform(request.POST)
