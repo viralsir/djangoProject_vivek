@@ -1,23 +1,12 @@
 {% extends "flights/layout.html" %}
 {% block body %}
   <h1> flights details </h1>
-    <table class="table">
-        <tr class="thead-dark">
-            <th> id</th>
-            <th> origin</th>
-            <th> destination</th>
-            <th> durations</th>
-        </tr>
+        <ul>
         {% for flight in no_of_flights %}
-            <tr>
-                <td> {{ flight.id }}</td>
-                <td> {{ flight.origin }}</td>
-                <td> {{ flight.destination }}</td>
-                <td> {{ flight.duration }}</td>
-            </tr>
-
+         <li><a href="{% url 'flight-detail' flight.id %}">{{ flight }}</a></li>
 
         {% endfor %}
+        </ul>
 
     </table>
     </ul>

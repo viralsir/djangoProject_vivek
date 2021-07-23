@@ -12,7 +12,7 @@ class airport(models.Model):
     city=models.CharField(max_length=50)
 
     def __str__(self):
-        return f"{self.city}({self.code})";
+        return f"{self.city}";
 
 
 # Create your models here.

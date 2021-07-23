@@ -1,0 +1,20 @@
+{% extends "flights/layout.html" %}
+{% block body %}
+    <h1> Flight - {{ flight_info.id }}</h1>
+    <ul>
+        <li> Origin Airport :
+            <ul>
+                <li>city :{{ flight_info.origin.city }} </li>
+                <li>Code : {{ flight_info.origin.code }}</li>
+            </ul>
+        </li>
+        <li> Destination Ariport
+               <ul>
+                   <li> City : {{ flight_info.destination.city }}</li>
+                   <li> Code : {{ flight_info.destination.code }}</li>
+               </ul>
+        </li>
+        <li> Durations : {{ flight_info.duration }}</li>
+    </ul>
+    <a href="{% url 'flight-home' %}"> Home </a>
+{% endblock %}
