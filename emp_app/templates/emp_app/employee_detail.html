@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Detail </title>
+</head>
+<body>
+       <h1> Employee Details </h1>
+        <ul>
+            <li> Name : {{ emp.name }}</li>
+            <li> Address : {{ emp.address }}</li>
+            <li> Ph No : {{ emp.phno }}</li>
+            <li> Salary : {{ emp.salary }}</li>
+
+        </ul>
+    <a href="{% url 'emp_list' %}"> Home</a>
+</body>
+</html>

@@ -5,10 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+    <h1> Employee List</h1>
     <ul>
         {% for employee in employee_list %}
-            <li> {{ employee.name }} - <b>{{ employee.salary }}</b> </li>
+            <li><a href="{% url 'emp-detail' employee.id %}">{{ employee.name }}</a>   </li>
         {% endfor %}
     </ul>
+
+    <a href="{% url 'emp-new' %}"> Add </a>
 </body>
 </html>
