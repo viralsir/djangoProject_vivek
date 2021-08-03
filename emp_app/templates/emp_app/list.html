@@ -8,7 +8,11 @@
     <h1> Employee List</h1>
     <ul>
         {% for employee in employee_list %}
-            <li><a href="{% url 'emp-detail' employee.id %}">{{ employee.name }}</a>   </li>
+            <li><a href="{% url 'emp-detail' employee.id %}">{{ employee.name }}</a>
+                 &nbsp;&nbsp; <a href="{% url 'emp-update' employee.id %}">update</a>
+                &nbsp;&nbsp; <a href="{% url 'emp-delete' employee.id %}">delete</a>
+            </li>
+
         {% endfor %}
     </ul>
 

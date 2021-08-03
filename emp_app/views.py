@@ -29,3 +29,23 @@ def new_employee(request):
         return redirect('emp_list')
     else:
         return render(request,"emp_app/emp_form.html")
+
+
+def update_employee(request,eid):
+    emp_info=employee.objects.get(id=eid);
+    if request.method == 'POST':
+        emp_info.name=request.POST['name']
+        emp_info.address=request.POST['address']
+        emp_info.phno=request.POST['phno']
+        emp_info.salary=request.POST['salary']
+        emp_info.save()
+        return redirect('emp_list')
+    else:
+        return render(request,"emp_app/emp_update.html",{
+        "emp_info":emp_info
+    })
+
+def delete_employee(request,eid):
+    emp_info = employee.objects.get(id=eid);
+    emp_info.delete()
+    return redirect('emp_list')
