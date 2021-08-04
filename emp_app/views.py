@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from emp_app.models import employee
 from .models import employee
+from .form import EmployeeForm
+
 # Create your views here.
 def employee_list(request):
     emplist=employee.objects.all()
@@ -18,6 +20,7 @@ def employee_detail(request,eid):
 
 
 def new_employee(request):
+    form=EmployeeForm()
     if request.method == 'POST':
         print(request.POST)
         emp=employee()
@@ -28,7 +31,9 @@ def new_employee(request):
         emp.save()
         return redirect('emp_list')
     else:
-        return render(request,"emp_app/emp_form.html")
+        return render(request,"emp_app/emp_form.html",{
+            "form":form
+        })
 
 
 def update_employee(request,eid):
